@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './style.css'
-
+import './RandomIcons.css'
 
 library.add(fas);
 
@@ -22,12 +21,8 @@ const RandomIcons = () => {
 
     return (
         <div className="content">
-            <div>
-                <button onClick={handleButtonClick}>random</button>
-                <div>
-                    {randomIcon && <FontAwesomeIcon icon={randomIcon} className='icon' />}
-                </div>
-            </div>
+            <button data-testid="random-icon-button" onClick={handleButtonClick}>Показать случайную иконку</button>
+            {randomIcon && <FontAwesomeIcon data-testid="random-icon" icon={randomIcon} style={{ fontSize: '3em', marginTop: '10px' }} />}
         </div>
     );
 };
